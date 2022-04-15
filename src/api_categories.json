@@ -1,0 +1,36 @@
+{
+    "url": "https://poe.ninja/api/data/CurrencyOverview?league=&type=&language=en",
+    "categories": {
+        "Currency": [
+            "Currency",
+            "Fragment"
+        ],
+        "Item": [
+            "DivinationCard",
+            "Artifact",
+            "Prophecy",
+            "Oil",
+            "Incubator",
+            "UniqueWeapon",
+            "UniqueArmour",
+            "UniqueAccessory",
+            "UniqueFlask",
+            "UniqueJewel",
+            "SkillGem",
+            "ClusterJewel",
+            "Map",
+            "BlightedMap",
+            "BlightRavagedMap",
+            "UniqueMap",
+            "DeliriumOrb",
+            "Invitation",
+            "Scarab",
+            "Fossil",
+            "Resonator",
+            "Beast",
+            "Essence",
+            "Vial"
+        ]
+    },
+    "current_league": "Archnemesis"
+}

@@ -1,7 +1,7 @@
-const dotenv = require('dotenv').config()
-const handle_logic = require('./handle_logic')
+const dotenv = require('dotenv').config();
+const handle_logic = require('./handle_logic');
 const Discord = require('discord.js');
-const request = require('request')
+const request = require('request');
 
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
