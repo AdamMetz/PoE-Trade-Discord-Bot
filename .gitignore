@@ -1,3 +1,4 @@
 node_modules/
 json_data_temp_storage/
+.gitignore
 .env
