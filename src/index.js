@@ -20,16 +20,11 @@ client.on('messageCreate', message =>{
     console.log("Args Passed In: "+args)
     const command = args.toLowerCase();
 
-    //Poe Ninja Request Test
-    request("https://poe.ninja/api/data/CurrencyHistory?league=Archnemesis&type=Currency&currencyId=22", {json: true}, (err, res, body) => {
-        console.log("?")
-        if (!err) {handle_logic.price_from_json(body)};
-    });
-
-    if (command === "ping"){
+    if (command === "test"){
         message.channel.send("The value of 'Exalted Orb' is 169 Chaos Orbs");
     } else {
-        message.channel.send("Invalid Command!")
+        let item_val = handle_logic.price_from_json(command)
+        message.channel.send("The value of "+command+" is "+item_val+" Chaos Orbs")
     }
 });
 
