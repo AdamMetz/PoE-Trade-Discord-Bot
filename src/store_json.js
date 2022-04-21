@@ -33,12 +33,12 @@ async function fetch_each_api_category(folder) {
 }
 
 function check_daily_data() {
-    let folder_list = fs.readdirSync('./json_data_temp_storage');
+    let folder_list = fs.readdirSync('./data/json_data_temp_storage');
     let curr_datetime = new Date().toLocaleDateString();
     if (!folder_list[folder_list.length - 1] || folder_list[folder_list.length - 1] != curr_datetime) {
-        fs.mkdirSync("./json_data_temp_storage/" + curr_datetime);
-        fetch_each_api_category("./json_data_temp_storage/" + curr_datetime);
+        fs.mkdirSync("./data/json_data_temp_storage/" + curr_datetime);
+        fetch_each_api_category("./data/json_data_temp_storage/" + curr_datetime);
     }
 }
 
-check_daily_data();
+module.exports = {check_daily_data};

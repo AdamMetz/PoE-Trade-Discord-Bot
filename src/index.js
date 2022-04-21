@@ -1,14 +1,16 @@
 const dotenv = require('dotenv').config();
-const handle_logic = require('./handle_logic');
+const price = require('./price');
+const store_json = require('./store_json')
 const Discord = require('discord.js');
 const request = require('request');
 
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
-const prefix = '-poetb'
+const prefix = '-price'
 
 client.once('ready', () => {
-    console.log('PoE Trade Search is online!')
+    console.log('PoE Trade Search is online!');
+    store_json.check_daily_data();
 });
 
 client.on('messageCreate', message =>{
@@ -23,8 +25,12 @@ client.on('messageCreate', message =>{
     if (command === "test"){
         message.channel.send("The value of 'Exalted Orb' is 169 Chaos Orbs");
     } else {
-        let item_val = handle_logic.price_from_json(command)
-        message.channel.send("The value of "+command+" is "+item_val+" Chaos Orbs")
+        let item_val = price.price_from_json(command)
+        if (item_val >= 0){
+            message.channel.send("The value of "+command+" is "+item_val+" Chaos Orbs")
+        } else {
+            message.channel.send("Unable to find to find the item: "+command)
+        }
     }
 });
 
